@@ -33,7 +33,7 @@ class CalculadoraNotasTest {
 
     @Test
     void repruebaConMenosDeTres() {
-        assertFalse(calculadora.aprueba(2.9));
+        assertFalse(calculadora.aprueba(4.5));
     }
 
     @ParameterizedTest
