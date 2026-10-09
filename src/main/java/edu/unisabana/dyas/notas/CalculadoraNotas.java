@@ -33,6 +33,18 @@ public class CalculadoraNotas {
         return validar(definitiva, "definitiva").compareTo(NOTA_APROBATORIA) >= 0;
     }
 
+    public String concepto(double definitiva) {
+        BigDecimal nota = validar(definitiva, "definitiva");
+        if (nota.compareTo(new BigDecimal("4.5")) >= 0) {
+            return "Excelente";
+        } else if (nota.compareTo(new BigDecimal("4.0")) >= 0) {
+            return "Sobresaliente";
+        } else if (nota.compareTo(NOTA_APROBATORIA) >= 0) {
+            return "Aprobado";
+        }
+        return "Reprobado";
+    }
+
     /**
      * Nota que se necesita en el tercer corte para llegar a la nota aprobatoria (3.0).
      * Se redondea hacia arriba a una décima; si ya no es posible aprobar (mayor que 5.0)
