@@ -33,6 +33,11 @@ public class CalculadoraNotas {
         return validar(definitiva, "definitiva").compareTo(NOTA_APROBATORIA) >= 0;
     }
 
+    // Variante TDD: cuerpo vacío para que compile pero las pruebas fallen (Red por pruebas fallidas).
+    public double notaNecesariaTercerCorte(double corte1, double corte2) {
+        return 0;
+    }
+
     private BigDecimal validar(double nota, String nombre) {
         BigDecimal valor = BigDecimal.valueOf(nota);
         if (valor.compareTo(NOTA_MINIMA) < 0 || valor.compareTo(NOTA_MAXIMA) > 0) {
